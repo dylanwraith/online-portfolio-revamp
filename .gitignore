@@ -1,9 +1,34 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/app/node_modules
+/app/.pnp
+/app/.pnp.js
+
+# testing
+/app/coverage
+
+# production
+/app/build
+
+# misc
+/app/.DS_Store
+/app/.env.local
+/app/.env.development.local
+/app/.env.test.local
+/app/.env.production.local
+
+/app/npm-debug.log*
+/app/yarn-debug.log*
+/app/yarn-error.log*
+
+### Generated Gradle Files ###
 HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+!**/api/main/**/build/
+!**/api/test/**/build/
 
 ### STS ###
 .apt_generated
@@ -14,8 +39,8 @@ build/
 .springBeans
 .sts4-cache
 bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+!**/api/main/**/bin/
+!**/api/test/**/bin/
 
 ### IntelliJ IDEA ###
 .idea
@@ -23,8 +48,8 @@ bin/
 *.iml
 *.ipr
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+!**/api/main/**/out/
+!**/api/test/**/out/
 
 ### NetBeans ###
 /nbproject/private/
