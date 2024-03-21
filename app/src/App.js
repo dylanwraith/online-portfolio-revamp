@@ -7,6 +7,7 @@ import about from './main-menu/menu-option-about-me.png';
 import contact from './main-menu/menu-option-contact-me.png';
 import bottom from './main-menu/bottom-border.png';
 import selector from './main-menu/menu-selector.png';
+import winky from './main-menu/winky-pikachu.gif';
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
         </div>
         <div className={"menu-item"}>
             <div className={"selectable"} >
-                <img src={fun} className={"fun-label"} />
+                <div className={"hover-trigger"}>
+                    <img src={winky} className={"winky"} />
+                    <img src={fun} className={"fun-label"} />
+                </div>
                 <img src={selector} className={"fun-selector"} />
             </div>
         </div>
