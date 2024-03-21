@@ -1,111 +1,111 @@
 .menu {
-    display: grid;
-    grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 500px [menu-right-edge] 1fr [screen-right-edge];
-    padding-top: 70px;
+	display: grid;
+	grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 500px [menu-right-edge] 1fr [screen-right-edge];
+	padding-top: 70px;
 }
 
 .menu-item {
-    grid-column-start: menu-left-edge;
-    font-size: 0;
+	grid-column-start: menu-left-edge;
+	font-size: 0;
 }
 
 .selectable {
-    position: relative;
-    display: grid;
+	position: relative;
+	display: grid;
 }
 
 .selectable > * {
-    grid-area: 1 / 1 / 2 / 2;
+	grid-area: 1 / 1 / 2 / 2;
 }
 
 .winky {
-    position: absolute;
-    height: 85%;
-    left: 77%;
-    cursor: pointer;
+	position: absolute;
+	height: 85%;
+	left: 77%;
+	cursor: pointer;
 }
 
 .fun-label {
-    cursor: pointer;
-    width: 100%;
+	cursor: pointer;
+	width: 100%;
 }
 
 .fun-selector {
-    display: none;
+	display: none;
 }
 
 .hover-trigger:hover + .fun-selector {
-    display: block;
-    position: absolute;
-    height: 40%;
-    top: 30%;
-    left: 5%;
+	display: block;
+	position: absolute;
+	height: 40%;
+	top: 30%;
+	left: 5%;
 }
 
 .resume-label {
-    cursor: pointer;
-    width: 100%;
+	cursor: pointer;
+	width: 100%;
 }
 
 .resume-selector {
-    display: none;
+	display: none;
 }
 
 .resume-label:hover + .resume-selector {
-    display: block;
-    position: absolute;
-    height: 40%;
-    top: 30%;
-    left: 5%;
+	display: block;
+	position: absolute;
+	height: 40%;
+	top: 30%;
+	left: 5%;
 }
 
 .projects-label {
-    cursor: pointer;
-    width: 100%;
+	cursor: pointer;
+	width: 100%;
 }
 
 .projects-selector {
-    display: none;
+	display: none;
 }
 
 .projects-label:hover + .projects-selector {
-    display: block;
-    position: absolute;
-    height: 40%;
-    top: 30%;
-    left: 5%;
+	display: block;
+	position: absolute;
+	height: 40%;
+	top: 30%;
+	left: 5%;
 }
 
 .about-label {
-    cursor: pointer;
-    width: 100%;
+	cursor: pointer;
+	width: 100%;
 }
 
 .about-selector {
-    display: none;
+	display: none;
 }
 
 .about-label:hover + .about-selector {
-    display: block;
-    position: absolute;
-    height: 40%;
-    top: 30%;
-    left: 5%;
+	display: block;
+	position: absolute;
+	height: 40%;
+	top: 30%;
+	left: 5%;
 }
 
 .contact-label {
-    cursor: pointer;
-    width: 100%;
+	cursor: pointer;
+	width: 100%;
 }
 
 .contact-selector {
-    display: none;
+	display: none;
 }
 
 .contact-label:hover + .contact-selector {
-    display: block;
-    position: absolute;
-    height: 40%;
-    top: 30%;
-    left: 5%;
+	display: block;
+	position: absolute;
+	height: 40%;
+	top: 30%;
+	left: 5%;
 }
