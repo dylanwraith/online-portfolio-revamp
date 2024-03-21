@@ -1,43 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.container {
+.menu {
     display: grid;
     grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 500px [menu-right-edge] 1fr [screen-right-edge];
     padding-top: 70px;
@@ -46,4 +7,98 @@
 .menu-item {
     grid-column-start: menu-left-edge;
     font-size: 0;
+}
+
+.selectable {
+    position: relative;
+    display: grid;
+}
+
+.selectable > * {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.fun-label {
+    cursor: pointer;
+    width: 100%;
+}
+
+.fun-selector {
+    display: none;
+}
+
+.fun-label:hover + .fun-selector {
+    display: block;
+    position: absolute;
+    height: 40%;
+    top: 30%;
+    left: 5%;
+}
+
+.resume-label {
+    cursor: pointer;
+    width: 100%;
+}
+
+.resume-selector {
+    display: none;
+}
+
+.resume-label:hover + .resume-selector {
+    display: block;
+    position: absolute;
+    height: 40%;
+    top: 30%;
+    left: 5%;
+}
+
+.projects-label {
+    cursor: pointer;
+    width: 100%;
+}
+
+.projects-selector {
+    display: none;
+}
+
+.projects-label:hover + .projects-selector {
+    display: block;
+    position: absolute;
+    height: 40%;
+    top: 30%;
+    left: 5%;
+}
+
+.about-label {
+    cursor: pointer;
+    width: 100%;
+}
+
+.about-selector {
+    display: none;
+}
+
+.about-label:hover + .about-selector {
+    display: block;
+    position: absolute;
+    height: 40%;
+    top: 30%;
+    left: 5%;
+}
+
+.contact-label {
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-selector {
+    display: none;
+}
+
+.contact-label:hover + .contact-selector {
+    display: block;
+    position: absolute;
+    height: 40%;
+    top: 30%;
+    left: 5%;
 }
