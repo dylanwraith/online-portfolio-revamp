@@ -18,6 +18,13 @@
     grid-area: 1 / 1 / 2 / 2;
 }
 
+.winky {
+    position: absolute;
+    height: 85%;
+    left: 77%;
+    cursor: pointer;
+}
+
 .fun-label {
     cursor: pointer;
     width: 100%;
@@ -27,7 +34,7 @@
     display: none;
 }
 
-.fun-label:hover + .fun-selector {
+.hover-trigger:hover + .fun-selector {
     display: block;
     position: absolute;
     height: 40%;
