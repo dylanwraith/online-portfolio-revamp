@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 500px [menu-right-edge] 1fr [screen-right-edge];
+    padding-top: 70px;
+}
+
+.menu-item {
+    grid-column-start: menu-left-edge;
+    font-size: 0;
 }
