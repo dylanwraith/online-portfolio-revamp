@@ -1,14 +1,3 @@
-.menu {
-	display: grid;
-	grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 500px [menu-right-edge] 1fr [screen-right-edge];
-	padding-top: 70px;
-}
-
-.menu-item {
-	grid-column-start: menu-left-edge;
-	font-size: 0;
-}
-
 .selectable {
 	position: relative;
 	display: grid;
@@ -108,4 +97,41 @@
 	height: 40%;
 	top: 30%;
 	left: 5%;
+}
+
+.non-selectable-image {
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.main-grid {
+	display: grid;
+	grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 80vmin [menu-right-edge] 1fr [screen-right-edge];
+	grid-template-rows: [screen-top-edge] 80vmin [menu-divider] 20vmin [screen-bottom-edge];
+}
+
+.top-display-border {
+	grid-column-start: menu-left-edge;
+	grid-row-start: screen-top-edge;
+	width: 100%;
+}
+
+.top-display-grid {
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: [container-left-edge] 18.28% [display-left-edge] 62.81% [display-right-edge] 18.91% [container-right-edge];
+	grid-template-rows: [container-top-edge] 14.18% [display-top-edge] 57.09% [display-bottom-edge] 28.73% [container-bottom-edge];
+}
+
+.top-display {
+	grid-column-start: display-left-edge;
+	grid-row-start: display-top-edge;
+	background-color: white;
+	height: 100%;
+	font-size: 0;
 }
