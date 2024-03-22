@@ -1,3 +1,21 @@
+@font-face {
+	font-family: 'Pokemon Classic Regular';
+	src: url('https://db.onlinewebfonts.com/t/900f8add35323c44ee840c611ed9a7a5.eot');
+	src: url('https://db.onlinewebfonts.com/t/900f8add35323c44ee840c611ed9a7a5.eot?#iefix') format('embedded-opentype'),
+		url('https://db.onlinewebfonts.com/t/900f8add35323c44ee840c611ed9a7a5.woff2') format('woff2'),
+		url('https://db.onlinewebfonts.com/t/900f8add35323c44ee840c611ed9a7a5.woff') format('woff'),
+		url('https://db.onlinewebfonts.com/t/900f8add35323c44ee840c611ed9a7a5.ttf') format('truetype'),
+		url('https://db.onlinewebfonts.com/t/900f8add35323c44ee840c611ed9a7a5.svg#Pokemon Classic Regular') format('svg');
+}
+
+.main-grid {
+	font-family: 'Pokemon Classic Regular';
+	background-color: grey;
+	display: grid;
+	grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 80vmin [menu-right-edge] 1fr [screen-right-edge];
+	grid-template-rows: [screen-top-edge] 80vmin [menu-divider] 20vmin [screen-bottom-edge];
+}
+
 .selectable {
 	position: relative;
 	display: grid;
@@ -105,12 +123,6 @@
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
-}
-
-.main-grid {
-	display: grid;
-	grid-template-columns: [screen-left-edge] 1fr [menu-left-edge] 80vmin [menu-right-edge] 1fr [screen-right-edge];
-	grid-template-rows: [screen-top-edge] 80vmin [menu-divider] 20vmin [screen-bottom-edge];
 }
 
 .top-display-border {
