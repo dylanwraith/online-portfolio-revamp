@@ -1,16 +1,51 @@
 import './App.css';
-import top from './assets/main-menu/top-border.png';
-import fun from './assets/main-menu/menu-option-fun-mode.png';
-import resume from './assets/main-menu/menu-option-resume.png';
-import projects from './assets/main-menu/menu-option-projects.png';
-import about from './assets/main-menu/menu-option-about-me.png';
-import contact from './assets/main-menu/menu-option-contact-me.png';
-import bottom from './assets/main-menu/bottom-border.png';
-import selector from './assets/main-menu/menu-selector.png';
+import React, { useState, useEffect } from 'react';
+import selector from './assets/main-menu/menu-selector.svg';
 import winky from './assets/main-menu/winky-pikachu.gif';
 import gameboy from './assets/gameboy.png';
+import menuBorder from './assets/main-menu/menu-border.svg';
 
 function App() {
+	const [selected, setSelected] = useState([true, false, false, false, false]);
+
+	function MainMenuButton({ index, label, select }) {
+		const [isSelected, setIsSelected] = useState(selected[index] || false);
+		const selectButton = () => {
+			select();
+			setIsSelected(selected[index]);
+		};
+
+		return (
+			<li className='main-menu-button-wrapper' onMouseEnter={selectButton}>
+				<button className='main-menu-button'>
+					{label}
+					{label === 'FUN MODE' && <img src={winky} className={'winky non-selectable-image'} />}
+				</button>
+				{isSelected && <img src={selector} className='selector' />}
+			</li>
+		);
+	}
+
+	const setFunModeSelected = () => {
+		setSelected([true, false, false, false, false]);
+	};
+
+	const setResumeSelected = () => {
+		setSelected([false, true, false, false, false]);
+	};
+
+	const setProjectsSelected = () => {
+		setSelected([false, false, true, false, false]);
+	};
+
+	const setAboutMeSelected = () => {
+		setSelected([false, false, false, true, false]);
+	};
+
+	const setContactMeSelected = () => {
+		setSelected([false, false, false, false, true]);
+	};
+
 	return (
 		<>
 			<div className='main-grid'>
@@ -19,31 +54,14 @@ function App() {
 					<div className='top-display-grid'>
 						<div className='top-display'>
 							{/* Display Menu */}
-							<img src={top} width='100%' className='non-selectable-image' />
-							<div className={'selectable'}>
-								<div className={'hover-trigger'}>
-									<img src={winky} className={'winky non-selectable-image'} />
-									<img src={fun} className={'fun-label non-selectable-image'} />
-								</div>
-								<img src={selector} className={'fun-selector non-selectable-image'} />
-							</div>
-							<div className={'selectable'}>
-								<img src={resume} className={'resume-label non-selectable-image'} />
-								<img src={selector} className={'resume-selector non-selectable-image'} />
-							</div>
-							<div className={'selectable'}>
-								<img src={projects} className={'projects-label non-selectable-image'} />
-								<img src={selector} className={'projects-selector non-selectable-image'} />
-							</div>
-							<div className={'selectable'}>
-								<img src={about} className={'about-label non-selectable-image'} />
-								<img src={selector} className={'about-selector non-selectable-image'} />
-							</div>
-							<div className={'selectable'}>
-								<img src={contact} className='contact-label non-selectable-image' />
-								<img src={selector} className={'contact-selector non-selectable-image'} />
-							</div>
-							<img src={bottom} width='100%' className='non-selectable-image' />
+							<img src={menuBorder} className='menu-border non-selectable-image' />
+							<menu className='menu-grid'>
+								<MainMenuButton label='FUN MODE' index='0' select={() => setFunModeSelected()} />
+								<MainMenuButton label='RESUME' index='1' select={() => setResumeSelected()} />
+								<MainMenuButton label='PROJECTS' index='2' select={() => setProjectsSelected()} />
+								<MainMenuButton label='ABOUT ME' index='3' select={() => setAboutMeSelected()} />
+								<MainMenuButton label='CONTACT' index='4' select={() => setContactMeSelected()} />
+							</menu>
 						</div>
 					</div>
 				</div>
