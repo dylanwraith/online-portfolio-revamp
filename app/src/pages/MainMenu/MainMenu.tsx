@@ -42,12 +42,14 @@ const MainMenu: FC<{}> = () => {
 					isFunMode={true}
 					onMouseEnter={() => setMenuSelection(funModeMenuSelection)}
 				/>
-				<MainMenuButton
-					label='RESUME'
-					isSelected={menuSelection[1]}
-					isFunMode={false}
-					onMouseEnter={() => setMenuSelection(resumeMenuSelection)}
-				/>
+				<a href='/resume.pdf' target='_blank'>
+					<MainMenuButton
+						label='RESUME'
+						isSelected={menuSelection[1]}
+						isFunMode={false}
+						onMouseEnter={() => setMenuSelection(resumeMenuSelection)}
+					/>
+				</a>
 				<MainMenuButton
 					label='PROJECTS'
 					isSelected={menuSelection[2]}

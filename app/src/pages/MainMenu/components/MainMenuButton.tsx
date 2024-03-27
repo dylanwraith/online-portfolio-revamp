@@ -28,6 +28,7 @@ const Selector = styled(NonSelectableImage)({
 
 const MainMenuButtonWrapper = styled.li({
 	position: 'relative',
+	height: '100%',
 });
 
 const MainMenuButtonStyled = styled.button({
