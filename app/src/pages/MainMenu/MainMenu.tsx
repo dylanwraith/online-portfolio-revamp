@@ -50,12 +50,14 @@ const MainMenu: FC<{}> = () => {
 						onMouseEnter={() => setMenuSelection(resumeMenuSelection)}
 					/>
 				</a>
-				<MainMenuButton
-					label='PROJECTS'
-					isSelected={menuSelection[2]}
-					isFunMode={false}
-					onMouseEnter={() => setMenuSelection(projectsMenuSelection)}
-				/>
+				<a href='https://github.com/dylanwraith' target='_blank'>
+					<MainMenuButton
+						label='GITHUB'
+						isSelected={menuSelection[2]}
+						isFunMode={false}
+						onMouseEnter={() => setMenuSelection(projectsMenuSelection)}
+					/>
+				</a>
 				<MainMenuButton
 					label='ABOUT ME'
 					isSelected={menuSelection[3]}
