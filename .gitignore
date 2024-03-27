@@ -23,7 +23,6 @@
 /app/yarn-error.log*
 
 ### Generated Gradle Files ###
-HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
