@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: online-portfolio-revamp
+server:
+  port: ${SERVER_PORT}
+slack:
+  bot:
+    token: ${SLACK_BOT_TOKEN}
+  channel-id:
+    contact-form-submission: ${SLACK_CHANNEL_ID_CONTACT_FORM_SUBMISSION}
