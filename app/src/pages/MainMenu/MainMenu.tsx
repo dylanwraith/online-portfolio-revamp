@@ -3,6 +3,7 @@ import menuBorder from './assets/menu-border.svg';
 import MainMenuButton from './components/MainMenuButton';
 import styled from 'styled-components';
 import NonSelectableImage from '../../components/non-selectable-image';
+import { Link } from 'react-router-dom';
 
 const MainMenu: FC<{}> = () => {
 	const funModeMenuSelection = [true, false, false, false, false];
@@ -64,12 +65,14 @@ const MainMenu: FC<{}> = () => {
 					isFunMode={false}
 					onMouseEnter={() => setMenuSelection(aboutMeMenuSelection)}
 				/>
-				<MainMenuButton
-					label='CONTACT'
-					isSelected={menuSelection[4]}
-					isFunMode={false}
-					onMouseEnter={() => setMenuSelection(contactMeMenuSelection)}
-				/>
+				<Link to={'/contact'}>
+					<MainMenuButton
+						label='CONTACT'
+						isSelected={menuSelection[4]}
+						isFunMode={false}
+						onMouseEnter={() => setMenuSelection(contactMeMenuSelection)}
+					/>
+				</Link>
 			</MenuGrid>
 		</>
 	);
