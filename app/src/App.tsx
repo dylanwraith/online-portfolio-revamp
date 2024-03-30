@@ -4,6 +4,7 @@ import MainMenu from './pages/MainMenu/MainMenu';
 import GameBoyTheme from './components/GameBoyTheme';
 import ContactMe from './pages/ContactMe/ContactMe';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AboutMe from './pages/AboutMe/AboutMe';
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,14 @@ export default function App() {
 						element={
 							<GameBoyTheme>
 								<ContactMe />
+							</GameBoyTheme>
+						}
+					/>
+					<Route
+						path='/about-me'
+						element={
+							<GameBoyTheme>
+								<AboutMe />
 							</GameBoyTheme>
 						}
 					/>

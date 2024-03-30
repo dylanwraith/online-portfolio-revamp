@@ -59,12 +59,14 @@ const MainMenu: FC<{}> = () => {
 						onMouseEnter={() => setMenuSelection(projectsMenuSelection)}
 					/>
 				</a>
-				<MainMenuButton
-					label='ABOUT ME'
-					isSelected={menuSelection[3]}
-					isFunMode={false}
-					onMouseEnter={() => setMenuSelection(aboutMeMenuSelection)}
-				/>
+				<Link to={'/about-me'}>
+					<MainMenuButton
+						label='ABOUT ME'
+						isSelected={menuSelection[3]}
+						isFunMode={false}
+						onMouseEnter={() => setMenuSelection(aboutMeMenuSelection)}
+					/>
+				</Link>
 				<Link to={'/contact'}>
 					<MainMenuButton
 						label='CONTACT'
