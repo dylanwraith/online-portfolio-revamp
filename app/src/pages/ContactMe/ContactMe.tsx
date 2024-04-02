@@ -7,7 +7,7 @@ const ScrollableForm = styled.form({
 	width: '90%',
 	height: '90%',
 	overflow: 'auto',
-	border: '16px solid transparent',
+	border: '2.3vmin solid transparent',
 	borderImage: 'url(/menu-border.svg) 100',
 });
 
