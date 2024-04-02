@@ -5,6 +5,7 @@ import GameBoyTheme from './components/GameBoyTheme';
 import ContactMe from './pages/ContactMe/ContactMe';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AboutMe from './pages/AboutMe/AboutMe';
+import StartUp from './pages/StartUp/StartUp';
 
 const queryClient = new QueryClient();
 
@@ -17,7 +18,7 @@ export default function App() {
 						index
 						element={
 							<GameBoyTheme>
-								<MainMenu />
+								<StartUp />
 							</GameBoyTheme>
 						}
 					/>
