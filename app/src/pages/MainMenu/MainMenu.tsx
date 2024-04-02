@@ -14,68 +14,70 @@ const MainMenu: FC<{}> = () => {
 
 	const [menuSelection, setMenuSelection] = useState(funModeMenuSelection);
 
-	const MenuBorder = styled(NonSelectableImage)({
-		position: 'absolute',
-		height: '100%',
-		width: '100%',
-	});
-
 	const MenuGrid = styled.menu({
 		display: 'grid',
 		alignContent: 'center',
 		gridTemplateColumns: '1fr',
 		gridTemplateRows: 'repeat(5, 1fr)',
-		fontSize: 'x-large',
-		padding: '5% 5% 5% 5%',
-		width: '90%',
-		height: '90%',
+		padding: '0',
+		width: '100%',
+		height: '100%',
 		margin: '0',
 		listStyle: 'none',
 	});
 
+	const MenuWrapper = styled.div({
+		width: '90%',
+		height: '90%',
+		border: '2.3vmin solid transparent',
+		borderImage: 'url(/menu-border.svg) 100',
+		whiteSpace: 'pre-wrap',
+	});
+
 	return (
 		<>
-			<MenuBorder src={menuBorder} />
-			<MenuGrid>
-				<MainMenuButton
-					label='FUN MODE'
-					isSelected={menuSelection[0]}
-					isFunMode={true}
-					onMouseEnter={() => setMenuSelection(funModeMenuSelection)}
-				/>
-				<a href='/resume.pdf' target='_blank'>
+			<MenuWrapper>
+				<MenuGrid>
 					<MainMenuButton
-						label='RESUME'
-						isSelected={menuSelection[1]}
-						isFunMode={false}
-						onMouseEnter={() => setMenuSelection(resumeMenuSelection)}
+						label='FUN MODE'
+						isSelected={menuSelection[0]}
+						isFunMode={true}
+						onMouseEnter={() => setMenuSelection(funModeMenuSelection)}
 					/>
-				</a>
-				<a href='https://github.com/dylanwraith' target='_blank'>
-					<MainMenuButton
-						label='GITHUB'
-						isSelected={menuSelection[2]}
-						isFunMode={false}
-						onMouseEnter={() => setMenuSelection(projectsMenuSelection)}
-					/>
-				</a>
-				<Link to={'/about-me'}>
-					<MainMenuButton
-						label='ABOUT ME'
-						isSelected={menuSelection[3]}
-						isFunMode={false}
-						onMouseEnter={() => setMenuSelection(aboutMeMenuSelection)}
-					/>
-				</Link>
-				<Link to={'/contact'}>
-					<MainMenuButton
-						label='CONTACT'
-						isSelected={menuSelection[4]}
-						isFunMode={false}
-						onMouseEnter={() => setMenuSelection(contactMeMenuSelection)}
-					/>
-				</Link>
-			</MenuGrid>
+					<a href='/resume.pdf' target='_blank'>
+						<MainMenuButton
+							label='RESUME'
+							isSelected={menuSelection[1]}
+							isFunMode={false}
+							onMouseEnter={() => setMenuSelection(resumeMenuSelection)}
+						/>
+					</a>
+					<a href='https://github.com/dylanwraith' target='_blank'>
+						<MainMenuButton
+							label='GITHUB'
+							isSelected={menuSelection[2]}
+							isFunMode={false}
+							onMouseEnter={() => setMenuSelection(projectsMenuSelection)}
+						/>
+					</a>
+					<Link to={'/about-me'}>
+						<MainMenuButton
+							label='ABOUT ME'
+							isSelected={menuSelection[3]}
+							isFunMode={false}
+							onMouseEnter={() => setMenuSelection(aboutMeMenuSelection)}
+						/>
+					</Link>
+					<Link to={'/contact'}>
+						<MainMenuButton
+							label='CONTACT'
+							isSelected={menuSelection[4]}
+							isFunMode={false}
+							onMouseEnter={() => setMenuSelection(contactMeMenuSelection)}
+						/>
+					</Link>
+				</MenuGrid>
+			</MenuWrapper>
 		</>
 	);
 };

@@ -13,7 +13,7 @@ interface MainMenuButtonProps {
 
 const Winky = styled(NonSelectableImage)({
 	position: 'absolute',
-	top: '5%',
+	top: '15%',
 	height: '70%',
 	left: '77%',
 	cursor: 'pointer',
@@ -40,7 +40,7 @@ const MainMenuButtonStyled = styled.button({
 	textAlign: 'left',
 	cursor: 'pointer',
 	textIndent: '15%',
-	fontSize: 'x-large',
+	fontSize: '3vmin',
 });
 
 const MainMenuButton: FC<MainMenuButtonProps> = ({ label, isSelected, isFunMode, onMouseEnter }) => {
