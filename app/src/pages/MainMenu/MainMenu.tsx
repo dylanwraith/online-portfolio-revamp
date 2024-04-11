@@ -1,8 +1,6 @@
 import { FC, useState } from 'react';
-import menuBorder from './assets/menu-border.svg';
 import MainMenuButton from './components/MainMenuButton';
 import styled from 'styled-components';
-import NonSelectableImage from '../../components/non-selectable-image';
 import { Link } from 'react-router-dom';
 
 const MainMenu: FC<{}> = () => {

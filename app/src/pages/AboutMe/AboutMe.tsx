@@ -1,5 +1,22 @@
 import { FC } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+const AboutMeWrapper = styled.div({
+	display: 'flex',
+	flexDirection: 'column',
+	width: '100%',
+	height: '100%',
+});
+
+const BackButton = styled.button({
+	fontFamily: 'Pokemon Classic Regular',
+	cursor: 'pointer',
+	border: '2.3vmin solid transparent',
+	borderImage: 'url(/menu-border.svg) 100',
+	width: '100%',
+	backgroundColor: 'transparent',
+});
 
 const ScrollableDiv = styled.div({
 	width: '90%',
@@ -50,7 +67,14 @@ I'm always happy to get to know people, and I'm currently open to work if you ha
 `;
 
 const AboutMe: FC<{}> = () => {
-	return <ScrollableDiv>{message}</ScrollableDiv>;
+	return (
+		<AboutMeWrapper>
+			<Link to={'/main-menu'}>
+				<BackButton>← Back ←</BackButton>
+			</Link>
+			<ScrollableDiv>{message}</ScrollableDiv>
+		</AboutMeWrapper>
+	);
 };
 
 export default AboutMe;

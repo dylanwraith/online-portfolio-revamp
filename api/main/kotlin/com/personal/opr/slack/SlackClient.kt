@@ -16,7 +16,7 @@ class SlackClient(val slackConf: SlackConf) {
     }
 
     private fun sendBotMessageToChannel(channelId: String, text: String) {
-        logger.info("Sending bot message \"$text\" to Slack.")
+        logger.info("Sending bot message to Slack:\n\n \"$text\"")
 
         val request = ChatPostMessageRequest.builder()
             .channel(channelId)
