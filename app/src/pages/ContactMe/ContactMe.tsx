@@ -2,6 +2,23 @@ import { FC, FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import { useSubmitContactForm } from '../../server/hooks/contact-form-hooks';
 import { ContactFormSubmission } from '../../server/models/contact-form-submission';
+import { Link } from 'react-router-dom';
+
+const ContactMeWrapper = styled.div({
+	display: 'flex',
+	flexDirection: 'column',
+	width: '100%',
+	height: '100%',
+});
+
+const BackButton = styled.button({
+	fontFamily: 'Pokemon Classic Regular',
+	cursor: 'pointer',
+	border: '2.3vmin solid transparent',
+	borderImage: 'url(/menu-border.svg) 100',
+	width: '100%',
+	backgroundColor: 'transparent',
+});
 
 const ScrollableForm = styled.form({
 	width: '90%',
@@ -66,19 +83,24 @@ const ContactMe: FC<{}> = () => {
 	}
 
 	return (
-		<ScrollableForm onSubmit={handleSubmission}>
-			<BlockLabel>Full Name</BlockLabel>
-			<BlockInput name='fullName' />
-			<BlockLabel>Email</BlockLabel>
-			<BlockInput name='email' />
-			<BlockLabel>Favorite Pokémon</BlockLabel>
-			<BlockInput name='favoritePokemon' />
-			<BlockLabel>Message</BlockLabel>
-			<BlockTextArea name='message' />
-			<ContactMeButton type='submit' disabled={isFetching}>
-				Contact Me!
-			</ContactMeButton>
-		</ScrollableForm>
+		<ContactMeWrapper>
+			<Link to={'/main-menu'}>
+				<BackButton>← Back ←</BackButton>
+			</Link>
+			<ScrollableForm onSubmit={handleSubmission}>
+				<BlockLabel>Full Name</BlockLabel>
+				<BlockInput name='fullName' />
+				<BlockLabel>Email</BlockLabel>
+				<BlockInput name='email' />
+				<BlockLabel>Favorite Pokémon</BlockLabel>
+				<BlockInput name='favoritePokemon' />
+				<BlockLabel>Message</BlockLabel>
+				<BlockTextArea name='message' />
+				<ContactMeButton type='submit' disabled={isFetching}>
+					Contact Me!
+				</ContactMeButton>
+			</ScrollableForm>
+		</ContactMeWrapper>
 	);
 };
 
