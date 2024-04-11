@@ -2,6 +2,8 @@
 
 This project was created using React, Spring, and Gradle.
 
+Visit https://github.com/users/dylanwraith/projects/1 for project details.
+
 ### Running the application locally
 
 To set Environment Variables in MacOS Sonoma 14.4.1 using zsh terminal:
