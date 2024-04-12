@@ -6,6 +6,8 @@ import ContactMe from './pages/ContactMe/ContactMe';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AboutMe from './pages/AboutMe/AboutMe';
 import StartUp from './pages/StartUp/StartUp';
+import Battle from './pages/Battle/Battle';
+import SelfStats from './pages/Battle/components/SelfStats';
 
 const queryClient = new QueryClient();
 
@@ -43,6 +45,14 @@ export default function App() {
 						element={
 							<GameBoyTheme>
 								<AboutMe />
+							</GameBoyTheme>
+						}
+					/>
+					<Route
+						path='/battle'
+						element={
+							<GameBoyTheme>
+								<Battle />
 							</GameBoyTheme>
 						}
 					/>

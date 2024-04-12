@@ -36,12 +36,14 @@ const MainMenu: FC<{}> = () => {
 		<>
 			<MenuWrapper>
 				<MenuGrid>
-					<MainMenuButton
-						label='FUN MODE'
-						isSelected={menuSelection[0]}
-						isFunMode={true}
-						onMouseEnter={() => setMenuSelection(funModeMenuSelection)}
-					/>
+					<Link to={'/battle'}>
+						<MainMenuButton
+							label='FUN MODE'
+							isSelected={menuSelection[0]}
+							isFunMode={true}
+							onMouseEnter={() => setMenuSelection(funModeMenuSelection)}
+						/>
+					</Link>
 					<a href='/resume.pdf' target='_blank'>
 						<MainMenuButton
 							label='RESUME'
