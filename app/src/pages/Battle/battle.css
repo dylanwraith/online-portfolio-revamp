@@ -1,0 +1,33 @@
+@keyframes hit {
+	0% {
+		opacity: 100%;
+	}
+	50% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
+.hit {
+	animation-name: hit;
+	animation-duration: 0.15s;
+	animation-iteration-count: 5;
+}
+
+@keyframes dead {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: 20vmin;
+	}
+}
+
+.dead {
+	position: relative;
+	animation-name: dead;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}

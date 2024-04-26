@@ -2,6 +2,19 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import NonSelectableImage from '../../../components/non-selectable-image';
 import selfHealthAndXpMeters from '../assets/fight_self_meters.svg';
+import { animated } from '@react-spring/web';
+
+interface SelfStatsProps {
+	name: string;
+	level: number;
+	totalHealth: number;
+	currentHealth: number;
+	gender: string;
+	totalExperiencePoints: number;
+	requiredExperiencePoints: number;
+	healthBarColor: string;
+	healthBarAnimation: any;
+}
 
 const SelfStatsGrid = styled.div({
 	display: 'grid',
@@ -39,15 +52,6 @@ const HealthAndXpMeters = styled(NonSelectableImage)({
 	width: '100%',
 });
 
-const HealthBar = styled.div({
-	gridRowStart: 'topHealthBar',
-	gridRowEnd: 'botHealthBar',
-	gridColumnStart: 'leftHealthBar',
-	gridColumnEnd: 'rightHealthXpBar',
-	backgroundColor: 'orange',
-	width: '40%',
-});
-
 const HealthTotal = styled.div({
 	gridRowStart: 'topHealthTot',
 	gridRowEnd: 'botHealthTot',
@@ -57,6 +61,20 @@ const HealthTotal = styled.div({
 	lineHeight: '1vmin',
 });
 
+const HealthBar = styled.div<{ color: string }>`
+	grid-row-start: topHealthBar;
+	grid-row-end: botHealthBar;
+	grid-column-start: leftHealthBar;
+	grid-column-end: rightHealthXpBar;
+	background-color: ${(props) => props.color};
+`;
+
+const XpBar = styled.div({
+	backgroundColor: 'deepskyblue',
+	float: 'right',
+	height: '100%',
+});
+
 const XpBarWrapper = styled.div({
 	gridRowStart: 'topXpBar',
 	gridRowEnd: 'botXpBar',
@@ -64,23 +82,36 @@ const XpBarWrapper = styled.div({
 	gridColumnEnd: 'rightHealthXpBar',
 });
 
-const XpBar = styled.div({
-	backgroundColor: 'deepskyblue',
-	float: 'right',
-	width: '80%',
-	height: '100%',
-});
+const SelfStats: FC<SelfStatsProps> = ({
+	name,
+	level,
+	totalHealth,
+	currentHealth,
+	totalExperiencePoints,
+	requiredExperiencePoints,
+	gender,
+	healthBarAnimation,
+	healthBarColor,
+}) => {
+	const experiencePercentage = (totalExperiencePoints / requiredExperiencePoints) * 100;
 
-const SelfStats: FC<{}> = () => {
+	const xpBarStyles = {
+		width: experiencePercentage + '%',
+	};
+
 	return (
 		<SelfStatsGrid>
-			<Name>CYNDAQUIL</Name>
-			<LevelAndGender>:L5&nbsp;&nbsp;♂</LevelAndGender>
+			<Name>{name}</Name>
+			<LevelAndGender>
+				:L{level}&nbsp;&nbsp;{gender}
+			</LevelAndGender>
 			<HealthAndXpMeters src={selfHealthAndXpMeters} />
-			<HealthBar />
-			<HealthTotal>5/&nbsp; 12&nbsp;&nbsp;&nbsp;</HealthTotal>
+			<HealthBar color={healthBarColor} as={animated.div} style={healthBarAnimation} />
+			<HealthTotal>
+				{currentHealth}/&nbsp; {totalHealth}&nbsp;&nbsp;&nbsp;
+			</HealthTotal>
 			<XpBarWrapper>
-				<XpBar />
+				<XpBar style={xpBarStyles} />
 			</XpBarWrapper>
 		</SelfStatsGrid>
 	);
