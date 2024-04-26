@@ -1,5 +1,10 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+
+interface FightMenuProps {
+	handleFight: () => void;
+}
 
 const MenuGrid = styled.div({
 	border: '2vmin solid transparent',
@@ -28,11 +33,16 @@ const RunOption = styled.button({
 	backgroundColor: 'transparent',
 });
 
-const FightMenu: FC<{}> = () => {
+const FightMenu: FC<FightMenuProps> = ({ handleFight }) => {
+	const navigate = useNavigate();
+	function run() {
+		navigate('/main-menu');
+	}
+
 	return (
 		<MenuGrid>
-			<FightOption>Fight</FightOption>
-			<RunOption>Run</RunOption>
+			<FightOption onClick={handleFight}>Fight</FightOption>
+			<RunOption onClick={run}>Run</RunOption>
 		</MenuGrid>
 	);
 };
